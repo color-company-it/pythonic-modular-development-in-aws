@@ -1,0 +1,27 @@
+create_table:
+  public.customer:
+    customer_id: serial PRIMARY KEY
+    first_name: VARCHAR NOT NULL
+    last_name: VARCHAR NOT NULL
+    email: VARCHAR NOT NULL
+    phone: VARCHAR
+
+drop_table:
+  - public.customer
+
+insert_data:
+  public.customer:
+    columns:
+      - first_name
+      - last_name
+      - email
+      - phone
+    data:
+      - - Alex
+        - Meyers
+        - AlexMeyers@gmail.com
+        - 0609875482
+      - - Lee
+        - Evans
+        - LeeEvans@gmail.com
+        - 0824578954

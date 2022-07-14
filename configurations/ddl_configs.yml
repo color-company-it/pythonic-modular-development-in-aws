@@ -6,8 +6,10 @@ create_table:
     email: VARCHAR NOT NULL
     phone: VARCHAR
 
-drop_table:
-  - public.customer
+  public.business_references:
+    uid: serial PRIMARY KEY
+    created_at: TIMESTAMP DEFAULT NOW()
+    ref: INT NOT NULL
 
 insert_data:
   public.customer:
@@ -25,3 +27,15 @@ insert_data:
         - Evans
         - LeeEvans@gmail.com
         - 0824578954
+
+  public.business_references:
+    columns:
+      - ref
+    data:
+      - - 228
+      - - 262
+      - - 386
+
+drop_table:
+  - public.customer
+  - public.business_references
